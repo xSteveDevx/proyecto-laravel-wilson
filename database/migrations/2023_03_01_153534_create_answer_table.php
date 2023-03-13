@@ -11,24 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('blog_answers', function (Blueprint $table) {
+        Schema::create('answers', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_user');
             $table->unsignedBigInteger('id_post');
             $table->foreign('id_user')->references('id')->on('users');
-            $table->foreign('id_post')->references('id')->on('posts');
-            $table->string('answer', 300);
-
+            $table->foreign('id_post')->references('id')->on('articles');
+            $table->string('answer', 500);
             $table->timestamps();
             
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('blog_answers');
-    }
+   
 };

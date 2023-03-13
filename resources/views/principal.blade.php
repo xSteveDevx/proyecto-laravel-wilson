@@ -1,36 +1,27 @@
 @extends('layouts.layout-principal')
 @section('body')
-<!--bg-info Estilos de bootstrap, sirve para fondo azul -->
-<div class="d-flex justify-content-center">
-<!--mb: margin bottom mt: margin top col:7 de 12  -->
-<div class="card bg-info mb-4 mt-4 col-7 md-7">
-    <div class="card-header">
-        Tema
-    </div>
-    <div class="card-body">
-        <h5 class="card-title">Autor: </h5>
-        <h5 class="card-title">Fecha: </h5>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis tempora, et adipisci deleniti unde enim excepturi! Obcaecati architecto laborum quidem porro nulla harum ipsa delectus, magnam consectetur reprehenderit aliquam? Fugit.</p>
-        <div class="d-flex justify-content-end">
-        <a href="yarn-answer" class="btn btn-primary">Reponder</a>
+
+
+@foreach ($posts as $post)
+<form action="{{url('/yarn-answer/'.'id='.$post->id)}}" method="GET">
+@csrf
+<div  class="d-flex justify-content-center">
+    <div class="card text-bg-light mb-4 mt-4 col-7 md-7">
+        <div class="card-header">
+            <h2>{{ $post->title }}</h2>
+        </div>
+        <div class="card-body">
+            <h6>Autor: {{$post->name_user}}</h6>
+            <p>Fecha: {{$post->created_at}}</p>
+            <p>{{ $post->text_post }}</p>
+            <div class="d-flex justify-content-end">
+            <input type="submit" class="btn btn-dark mb-3 mt-2" style="font-family: roboto; font-size: 1rem; font-weight: light-bold;" value="Responder">
+            </div>
         </div>
     </div>
-</div></div>
-<!--bg-succes: Estilos de bootstrap, sirve para fondo verde -->
-<div class="d-flex justify-content-center">
-<div class="card bg-success mb-4 mt-4 col-7 md-7">
-    <div class="card-header">
-        Tema
-    </div>
-    <div class="card-body">
-        <h5 class="card-title">Autor: </h5>
-        <h5 class="card-title">Fecha: </h5>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis tempora, et adipisci deleniti unde enim excepturi! Obcaecati architecto laborum quidem porro nulla harum ipsa delectus, magnam consectetur reprehenderit aliquam? Fugit.</p>
-        <div class="d-flex justify-content-end">
-        <a href="yarn-answer" class="btn btn-primary ">Reponder</a>
-    </div>
-    </div>
+    
 </div>
-</div>
+</form>
+@endforeach
 
 @endsection

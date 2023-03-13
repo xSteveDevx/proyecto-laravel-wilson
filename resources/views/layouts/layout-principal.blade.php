@@ -8,32 +8,45 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
     <style>
+        body{
+            background: rgb(0,109,119);
+background: linear-gradient(90deg, rgba(0,109,119,1) 0%, rgba(131,197,190,1) 45%);
+        }
+        
         .navbar{
             height: 50px;
             width: 100%;
             display: flex;
-            color: white; 
+            
+             
         
         }
+        
         ul{
             display: flex;
         }
         ul li{
             list-style: none;
         }
+        
+        a:hover{
+            color:#cad2c5;
+        }
         a{
             text-decoration: none;
             color: white;
+            font-size: 1.1rem;
         }
+        
     </style>
 </head>
 <body>
-    <nav class="navbar bg-dark mt-0">
+    <nav class="navbar mt-0" style="background: #2f3e46;">
         <div class="container-fluid">
             <ul>
-                <li><a href="principal">Menu principal</a></li>
-                <li class="ps-4"><a href="principal" >Dashboard</a> </li>
-                <li class="ps-4"><a href="create-yarn" >Crear Hilo</a> </li>
+                <li><a href="/principal">Menu principal</a></li>
+                <li class="ps-4"><a href="/principal" >Dashboard</a> </li>
+                <li class="ps-4"><a href="/create-yarn" >Crear Hilo</a> </li>
             </ul>
     </div>
     </nav>
